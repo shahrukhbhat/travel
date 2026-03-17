@@ -4,12 +4,22 @@
  */
 const LCAPApplicationService = require('@sap/low-code-event-handler');
 const travel_Logic = require('./code/travel-logic');
+const travel_Accept_Logic = require('./code/travel-accept-logic');
+const travel_Reject_Logic = require('./code/travel-reject-logic');
 
 class travelSrv extends LCAPApplicationService {
     async init() {
 
         this.after('READ', 'Travel', async (results, request) => {
             await travel_Logic(results, request);
+        });
+
+        this.on('Accept', 'Travel', async (request) => {
+            return travel_Accept_Logic(request);
+        });
+
+        this.on('Reject', 'Travel', async (request) => {
+            return travel_Reject_Logic(request);
         });
 
         return super.init();

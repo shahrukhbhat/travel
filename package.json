@@ -6,7 +6,7 @@
     "@cap-js/hana": "^2",
     "@sap-cloud-sdk/http-client": "^4.5.1",
     "@sap-cloud-sdk/util": "^4.5.1",
-    "@sap/cds": "^9",
+    "@sap/cds": "^9.7.1",
     "@sap/low-code-event-handler": "^1.2.5",
     "@sap/xsenv": ">=3.3.2 <3.3.3",
     "@sap/xssec": "^4.12.2",
